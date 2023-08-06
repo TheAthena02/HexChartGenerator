@@ -7,7 +7,7 @@ class Canvas{
   this.hexPoints = [];
   }
 
-  updateGraph(vArr, petName) {
+  updateGraph(vArr, Name, label) {
     background(220);
   
     strokeWeight(1);
@@ -69,19 +69,19 @@ class Canvas{
     endShape(CLOSE);
   
   
-    //labels
+    //labels -- will need to be changed in the future if allowing the change of shape
     textSize(15);
     fill("black");
     textAlign(CENTER);
-    text("Fun", 0, -160);
-    text("Looks", 140, -100);
-    text("Affection", 140, 110);
-    text("Ease", 0, 170);
-    text("Affordability", -145, 110);
-    text("Cool", -140, -100);
+    text(label[0], 0, -160);
+    text(label[1], 140, -100);
+    text(label[2], 140, 110);
+    text(label[3], 0, 170);
+    text(label[4], -145, 110);
+    text(label[5], -140, -100);
     textSize(25);
     textAlign(LEFT);
-    text(petName, -185, -165);
+    text(Name, -185, -165);
     textSize(17);
 
     function arraySum(arr) {
@@ -95,7 +95,7 @@ class Canvas{
 
 }
     
-    text("Total Pet Level: " + (arraySum(vArr) * 3), 35, -165);
+    text("Total Level: " + (arraySum(vArr) * 3), 60, -165);
   
   }
   

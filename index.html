@@ -8,13 +8,19 @@
             let cnv = createCanvas(400, 400);
             cnv.parent("canvas-container");
         }
-        let petChart = new Canvas();
+        let Chart = new Canvas();
         
         function draw(){
-            petChart.updateGraph(getSliderValues(), document.getElementById("petType").value);
+            Chart.updateGraph(getSliderValues(), document.getElementById("petType").value, getSliderLabels());
             noLoop();
         }
-        
+        function getSliderLabels() {
+            let labels = [];
+            for (let i = 1; i < 7; i++) {
+                labels.push(document.getElementById("label" + i + "Text").value)
+            }
+            return labels;
+        }
         function getSliderValues(){
             let values = []
             for(let i=1; i < 7; i++){
@@ -33,29 +39,29 @@
 </head>
 <body>
     <div class="slidecontainer">
-        <input type="text" id="petType" value="Pet Type" oninput="updateSliderLabels(getSliderValues())">
+        <input type="text" id="petType" value="Name/Type" oninput="updateSliderLabels(getSliderValues())">
         <br>
         <!--
         <input type="text" id="petType" value="Pet Type" oninput="updateSliderLabels(getSliderValues())">
         <br>
         -->
         
-        <br><span><h2>Fun</h2></span> <span><p id="stat5Out">1.5</p></span><br>
+        <br><span><input type="text" id="label1Text" value="Enter Label" oninput="updateSliderLabels(getSliderValues())"></span> <span><p id="stat5Out">1.5</p></span><br>
         <input type="range" min="0" max="12" value="6" class="slider" id="stat5Slider" oninput="updateSliderLabels(getSliderValues())">
         
-        <br><span><h2>Looks</h2></span> <span><p id="stat6Out">1.5</p></span><br>
+        <br><span><input type="text" id="label2Text" value="Enter Label" oninput="updateSliderLabels(getSliderValues())"></span> <span><p id="stat6Out">1.5</p></span><br>
         <input type="range" min="0" max="12" value="6" class="slider" id="stat6Slider" oninput="updateSliderLabels(getSliderValues())">
         
-        <br><span><h2>Affection</h2></span> <span><p id="stat1Out">1.5</p></span><br>
+        <br><span><input type="text" id="label3Text" value="Enter Label" oninput="updateSliderLabels(getSliderValues())"></span> <span><p id="stat1Out">1.5</p></span><br>
         <input type="range" min="0" max="12" value="6" class="slider" id="stat1Slider" oninput="updateSliderLabels(getSliderValues())">
         
-        <br><span><h2>Ease</h2></span> <span><p id="stat2Out">1.5</p></span><br>
+        <br><span><input type="text" id="label4Text" value="Enter Label" oninput="updateSliderLabels(getSliderValues())"></span> <span><p id="stat2Out">1.5</p></span><br>
         <input type="range" min="0" max="12" value="6" class="slider" id="stat2Slider" oninput="updateSliderLabels(getSliderValues())">
         
-        <br><span><h2>Affordability</h2></span> <span><p id="stat3Out">1.5</p></span><br>
+        <br><span><input type="text" id="label5Text" value="Enter Label" oninput="updateSliderLabels(getSliderValues())"></span> <span><p id="stat3Out">1.5</p></span><br>
         <input type="range" min="0" max="12" value="6" class="slider" id="stat3Slider" oninput="updateSliderLabels(getSliderValues())">
         
-        <br><span><h2>Cool</h2></span> <span><p id="stat4Out">1.5</p></span><br>
+        <br><span><input type="text" id="label6Text" value="Enter Label" oninput="updateSliderLabels(getSliderValues())"></span> <span><p id="stat4Out">1.5</p></span><br>
         <input type="range" min="0" max="12" value="6" class="slider" id="stat4Slider" oninput="updateSliderLabels(getSliderValues())">
         
     </div>

@@ -19,7 +19,7 @@ input[type=text] {
   }
 
 .slider {
-  -webkit-appearance: none;
+  appearance: none;
   width: 50%;
   height: 25px;
   background: #d3d3d3;
@@ -34,7 +34,7 @@ input[type=text] {
 }
 
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
+  appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
